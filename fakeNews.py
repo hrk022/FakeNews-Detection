@@ -44,7 +44,7 @@ if st.button("Predict") and news_input.strip():
     try:
         # Convert input to tokenized sequences
         input_seq = np.array(tokenizer.texts_to_sequences([news_input]), dtype=object)
-        input_padded = tf.keras.preprocessing.sequence.pad_sequences(input_seq, maxlen=500, dtype='int32')
+        input_padded = tf.keras.preprocessing.sequence.pad_sequences(input_seq, maxlen=300, dtype='int32')
 
         # Make Prediction
         prediction = model.predict(input_padded)
